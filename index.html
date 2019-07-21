@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme|Karla|Montserrat|Noto+Sans&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
@@ -42,28 +43,93 @@
               </div>
 
             </form>
-            <div class="float-right">
-                <button type="button" id="advanced-btn"  class="btn btn-primary fa fa-angle-double-down" data-toggle="modal" data-target="#myModal">Advanced</button>
+            <div class="float-right filter">
+                <button type="button" id="filter-btn"  class="btn " data-toggle="modal" data-target="#myModal"><i class="fa fa-filter"></i> &nbsp; Filter&nbsp; <i class="fa fa-angle-double-down"></i></button>
               </div>
               <div class="modal fade" id="myModal">
-                  <div class="modal-dialog modal-lg modal-dialog-centered ">
-                    <div class="modal-content">
+                  <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content p-4">
+                      <div>
+                          <form action="">
 
+                              <div class="p-1 bg-white mb-4">
+                                <div class="input-group">
+                                  <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-white">
+                                  <div class="input-group-append">
+                                    <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </form>
+                      </div>
                       <!-- Modal Header -->
-                      <div class="modal-header">
-                        <h4 class="modal-title">Modal Heading</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <div class="modal-header ">
+                        <h4 class="modal-title mb-4">Advanced Search</h4>
+                        <div class="close">
+                            <button type="button" class="close-btn" data-dismiss="modal">Close <i class="fa fa-close" style="font-size:24px"></i></button>
+                        </div>
+
                       </div>
 
                       <!-- Modal body -->
                       <div class="modal-body">
-                        Modal body..
+                        <form action="#">
+                          <div class="row">
+                              <div class="form-group col-lg-6 col-sm-6">
+                                  <label for="sel1">Select list (select one):</label>
+                                  <select class="form-control" id="sel1" name="sellist1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+
+                                <div class="form-group col-lg-6 col-sm-6">
+                                  <label for="sel2">Select list (select two):</label>
+                                  <select class="form-control" id="sel2" name="sellist2">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="form-group col-lg-6 col-sm-6">
+                                  <label for="sel3">Select list (select three):</label>
+                                  <select class="form-control" id="sel3" name="sellist3">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+
+                                <div class="form-group col-lg-6 col-sm-6">
+                                  <label for="sel4">Select list (select four):</label>
+                                  <select class="form-control" id="sel4" name="sellist4">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                  </select>
+                                </div>
+                          </div>
+
+
+
+                          <!-- Modal footer -->
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-primary">Reset</button>
+                          <button type="submit" class="btn btn-secondary">Search</button>
+                        </div>
+                        </form>
                       </div>
 
-                      <!-- Modal footer -->
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      </div>
+
 
                     </div>
                   </div>

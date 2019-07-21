@@ -1,10 +1,13 @@
-
-
 body {
   background: #ffd89b;
   background: -webkit-linear-gradient(to right, #ffd89b, #19547b);
   background: linear-gradient(to right, #ffd89b, #19547b);
   min-height: 100vh;
+}
+
+.display-4{
+  padding: 100px 0px 30px 0px;
+  font-family: 'BioRhyme', serif;
 }
 
 .form-control::placeholder {
@@ -15,8 +18,7 @@ body {
 
 .form-control:focus {
     box-shadow: none;
-  }
-
+}
 
 
 .input-group{
@@ -27,10 +29,32 @@ body {
   width: 100%;
   height: 75px;
 }
+
 #advanced-btn{
     font-size: 30px;
 }
 
 .search-container{
   height: 700px;
+}
+
+.close, .filter{
+  border: lightgrey solid 1px;
+  border-radius: 100px;
+
+}
+
+.close-btn, #filter-btn{
+  border: none;
+  background:none;
+  font-size: 30px;
+  color: black;
+}
+
+.fa{
+  background: #2db6ecd0;
+  color: white;
+  border: #2db6ecd0 solid 1px;
+  border-radius: 150px;
+  padding: 5px;
 }
