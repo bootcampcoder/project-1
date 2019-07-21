@@ -11,29 +11,97 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
     <div class="container">
       <div class="border bg-dark p-4 text-light h3 text-center">Header</div>
-      <div class="jumbotron display-4 text-center">
-        Price Matcher
-      </div>
-      <div class="input-group row">
-          <div class="col-10">
-                <input
-                type="text"
-                class="form-control"
-              />
+
+      <div class="row mb-5">
+        <div class="col-lg-12 mx-auto">
+
+          <div class="bg-white p-5 rounded shadow search-container">
+              <div class="jumbotron bg-white display-4 text-center">
+                  Event Search
+                </div>
+            <form action="">
+
+              <div class="p-1 bg-white mb-4">
+                <div class="input-group">
+                  <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-white">
+                  <div class="input-group-append">
+                    <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+            <div class="float-right">
+                <button type="button" id="advanced-btn"  class="btn btn-primary fa fa-angle-double-down" data-toggle="modal" data-target="#myModal">Advanced</button>
+              </div>
+              <div class="modal fade" id="myModal">
+                  <div class="modal-dialog modal-lg modal-dialog-centered ">
+                    <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Modal Heading</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        Modal body..
+                      </div>
+
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
           </div>
 
-        <div class="input-group-append  col-2">
-          <button type="button" class="btn btn-outline-secondary pl-2">
-            Search
-          </button>
         </div>
       </div>
-
+      <div class="p-5">&nbsp;</div>
+      <footer class="footer fixed-bottom py-4 bg-dark text-white">
+        <div class="container text-center">
+          <small
+            >&copy;
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            UofT SCS Coding Bootcamp (BootCampCoder)</small
+          >
+        </div>
+      </footer>
     </div>
+
+    <script src="assets/javascript/app.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
   </body>
-  <script src="assets/javascript/app.js"></script>
 </html>
