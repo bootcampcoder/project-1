@@ -8,6 +8,15 @@ body {
 .display-4{
   padding: 100px 0px 30px 0px;
   font-family: 'BioRhyme', serif;
+  background: rgba(255, 255, 255, 0.301);
+}
+
+.search-div{
+  background: rgba(255, 255, 255, 0.301);
+}
+
+.form-control{
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .form-control::placeholder {
@@ -18,16 +27,24 @@ body {
 
 .form-control:focus {
     box-shadow: none;
+    background: rgba(255, 255, 255, 0.30);
+}
+.reset:hover, .search:hover{
+  background-color:  rgba(224, 220, 220, 0.774);
+
 }
 
+button:hover{
+  color: #2db6ecd0;
+}
 
 .input-group{
-    border: solid lightgrey 1px;
+    border: solid rgb(236, 235, 235) 1px;
     border-radius: 100px;
-    box-shadow: 5px 5px grey;
-  padding: 20px;
-  width: 100%;
-  height: 75px;
+    box-shadow: 3px 3px grey;
+    padding: 20px;
+    width: 100%;
+    height: 100px;
 }
 
 #advanced-btn{
@@ -35,16 +52,18 @@ body {
 }
 
 .search-container{
-  height: 700px;
+  width: 100%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.close, .filter{
+.close, .filter, .reset, .search{
   border: lightgrey solid 1px;
   border-radius: 100px;
 
 }
 
-.close-btn, #filter-btn{
+.close-btn, #filter-btn, .reset-btn, .search-btn{
   border: none;
   background:none;
   font-size: 30px;
