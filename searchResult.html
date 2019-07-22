@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Event-Search</title>
+    <!-- Added link to the jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -122,20 +124,14 @@
                             <div class="form-group col-lg-6 col-sm-6">
                                 <label for="category">Category:</label>
                                 <select class="form-control" id="sel-category" name="category">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
+
                                 </select>
                               </div>
 
                               <div class="form-group col-lg-6 col-sm-6">
                                 <label for="subcategory">Subcategory:</label>
-                                <select class="form-control" id="sel-sub-categry" name="subcategory">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
+                                <select class="form-control" id="sel-sub-category" name="subcategory">
+
                                 </select>
                               </div>
                         </div>
@@ -202,6 +198,8 @@
     </div>
 
     <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/categories.js"></script>
+    <script src="assets/javascript/subcategories.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
