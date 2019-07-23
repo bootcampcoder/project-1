@@ -1,4 +1,3 @@
-//var queryURL = "https://www.eventbriteapi.com/v3/events/search/?q=toronto+canada+free"
 
 var queryURL = "https://www.eventbriteapi.com/v3/events/search/?location.address=toronto&location.within=10km&expand=venue&price=free&token=VNY6JP3JJDWS6LAXZSVY";
 
@@ -6,16 +5,7 @@ var queryURL = "https://www.eventbriteapi.com/v3/events/search/?location.address
 
 //  var queryURL ="https://www.eventbriteapi.com/v3/events/search?location.address=toronto&location.within=10km&expand=venue"
 
-// var settings = {
-//   async: true,
-//   crossDomain: true,
-//   url: queryURL,
-//   method: "GET",
-//   headers: {
-//     Authorization: "Bearer VNY6JP3JJDWS6LAXZSVY",
-//     "Content-Type": "application/json",
-//   },
-// };
+
 let clanedar;
 let calendarEl;
 let final_events = [];
@@ -40,23 +30,6 @@ $.ajax({
   loadCalendar();
 });
 
-
-
-  // $.ajax(settings).done(function(datas) {
-  //   var data = datas.events;
-  //   console.log(data)
-  //   data.forEach(event => {
-  //     final_events.push({
-  //         title: event.name.text,
-  //         url: event.url,
-  //         start: event.start.local,
-  //         end: event.end.local
-  //     });
-  //   });
-  //   console.log(final_events);
-  //   document.getElementById("calendar").innerHTML = '';
-  //   loadCalendar();
-  // });
 
 
   document.addEventListener("DOMContentLoaded", function() {

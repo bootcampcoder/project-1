@@ -1,8 +1,12 @@
 body {
-  background: #ffd89b;
+  /* background: #ffd89b;
   background: -webkit-linear-gradient(to right, #ffd89b, #19547b);
-  background: linear-gradient(to right, #ffd89b, #19547b);
+  background: linear-gradient(to right, #ffd89b, #19547b); */
   min-height: 100vh;
+}
+
+.navbar, .footer{
+  background-color: rgb(192, 61, 9)
 }
 
 .display-4{
