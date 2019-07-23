@@ -1,16 +1,39 @@
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+    apiKey: "AIzaSyDrlk0Nc7-wku0n93mKDtT5-WiFn4g2XeY",
+    authDomain: "events-hunter-be525.firebaseapp.com",
+    databaseURL: "https://events-hunter-be525.firebaseio.com",
+    projectId: "events-hunter-be525",
+    storageBucket: "",
+    messagingSenderId: "104676418013",
+    appId: "1:104676418013:web:629e23df93de9d59"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+
+  var database = firebase.database();
+  database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+
+
+  });
+
+
+
 //call the EVENTBRITE API FOR  
 var searchCat = "";
 var searchSubCat="";
 //Get Categries 
-var queryURL1 = "https://www.eventbriteapi.com/v3/categories/"
 
+var queryURL1 = "https://www.eventbriteapi.com/v3/categories/";
 var settings1 = {
     "async": true,
     "crossDomain": true,
     "url": queryURL1,
     "method": "GET",
     "headers": {
-      "Authorization": "Bearer VNY6JP3JJDWS6LAXZSVY",
+      "Authorization": "",
       "Content-Type": "application/json"
     }
   }
@@ -47,8 +70,8 @@ var settings2 = {
   });    
 
   //Monthly Event Search
-
-  var queryURL3 = "https://www.eventbriteapi.com/v3/events/search?start_date.keyword=this_month? ";
+  /*
+  var queryURL3 = "https://www.eventbriteapi.com/v3/events/search?start_date.keyword=this_week";
   var settings3 = {
     "async": true,
     "crossDomain": true,
@@ -68,3 +91,8 @@ var settings2 = {
 
   //complexed Query
 
+*/
+
+
+
+ 
