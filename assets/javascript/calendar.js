@@ -1,69 +1,84 @@
-document.addEventListener("DOMContentLoaded", function() {
-  var calendarEl = document.getElementById("calendar");
+//var queryURL = "https://www.eventbriteapi.com/v3/events/search/?q=toronto+canada+free"
 
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    plugins: ["dayGrid"],
-    defaultView: "dayGridMonth",
-    defaultDate: "2019-06-07",
-    header: {
-      left: "prev,next today",
-      center: "title",
-      right: "dayGridMonth,timeGridWeek,timeGridDay",
-    },
-    events: [
-      {
-        title: "All Day Event",
-        start: "2019-06-01",
-      },
-      {
-        title: "Long Event",
-        start: "2019-06-06",
-        end: "2019-06-10",
-      },
-      {
-        title: "Long Event",
-        start: "2019-06-07",
-        end: "2019-06-10",
-      },
-      {
-        groupId: "999",
-        title: "Repeating Event",
-        start: "2019-06-09T16:00:00",
-      },
-      {
-        groupId: "999",
-        title: "Repeating Event",
-        start: "2019-06-16T16:00:00",
-      },
-      {
-        title: "Conference",
-        start: "2019-06-11",
-        end: "2019-06-13",
-      },
-      {
-        title: "Meeting",
-        start: "2019-06-12T10:30:00",
-        end: "2019-06-12T12:30:00",
-      },
-      {
-        title: "Lunch",
-        start: "2019-06-12T12:00:00",
-      },
-      {
-        title: "Meeting",
-        start: "2019-06-12T14:30:00",
-      },
-      {
-        title: "Birthday Party",
-        start: "2019-06-13T07:00:00",
-      },
-      {
-        title: "Click for Google",
-        url: "http://google.com/",
-        start: "2019-06-28",
-      },
-    ],
+var queryURL = "https://www.eventbriteapi.com/v3/events/search/?location.address=toronto&location.within=10km&expand=venue&price=free&token=VNY6JP3JJDWS6LAXZSVY";
+
+// var queryURL = "https://www.eventbriteapi.com/v3/events/search?q=start_date.range_end=2019-01-01T00:00:01Z"
+
+//  var queryURL ="https://www.eventbriteapi.com/v3/events/search?location.address=toronto&location.within=10km&expand=venue"
+
+// var settings = {
+//   async: true,
+//   crossDomain: true,
+//   url: queryURL,
+//   method: "GET",
+//   headers: {
+//     Authorization: "Bearer VNY6JP3JJDWS6LAXZSVY",
+//     "Content-Type": "application/json",
+//   },
+// };
+let clanedar;
+let calendarEl;
+let final_events = [];
+
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function(datas) {
+  console.log(datas);
+  var data = datas.events;
+  console.log(data)
+  data.forEach(event => {
+    final_events.push({
+        title: event.name.text,
+        url: event.url,
+        start: event.start.local,
+        end: event.end.local
+    });
+  });
+  console.log(final_events);
+  document.getElementById("calendar").innerHTML = '';
+  loadCalendar();
+});
+
+
+
+  // $.ajax(settings).done(function(datas) {
+  //   var data = datas.events;
+  //   console.log(data)
+  //   data.forEach(event => {
+  //     final_events.push({
+  //         title: event.name.text,
+  //         url: event.url,
+  //         start: event.start.local,
+  //         end: event.end.local
+  //     });
+  //   });
+  //   console.log(final_events);
+  //   document.getElementById("calendar").innerHTML = '';
+  //   loadCalendar();
+  // });
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("calendar").innerHTML = '';
+    loadCalendar();
   });
 
-  calendar.render();
-});
+  var loadCalendar = function (){
+    calendarEl = document.getElementById("calendar");
+    var dateNow = Date(Date.now());
+    var formattedDate = moment(dateNow).format("YYYY-MM-DD");
+    calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: ["dayGrid"],
+      defaultView: "dayGridMonth",
+      defaultDate: formattedDate,
+      header: {
+        left: "prev,next today",
+        center: "title",
+        right: "dayGridMonth,timeGridWeek,timeGridDay",
+        backgroundColor: '#F00',
+      },
+      events: final_events,
+    });
+    calendar.render();
+  }
