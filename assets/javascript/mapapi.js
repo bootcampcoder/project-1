@@ -9,16 +9,16 @@ var lng = [];
 
 function ajaxCall(){
    // var queryURL1 = "https://www.eventbriteapi.com/v3/categories/";
-   var queryURL1 = "https://www.eventbriteapi.com/v3/events/search/?location.address=toronto&expand=venue&price=free";
+   var queryURL1 = "https://www.eventbriteapi.com/v3/events/search/?location.address=toronto&expand=venue&price=freehttps://www.eventbriteapi.com/v3/events/search/?location.address=toronto&location.within=10km&expand=venue&price=free&token=VNY6JP3JJDWS6LAXZSVY";
    var settings1 = {
       async: true,
       crossDomain: true,
       url: queryURL1,
       method: "GET",
-      headers: {
-        Authorization: "Bearer VNY6JP3JJDWS6LAXZSVY",
-        "Content-Type": "application/json",
-      },
+      //headers: {
+       // Authorization: "Bearer VNY6JP3JJDWS6LAXZSVY",
+       // "Content-Type": "application/json",
+     // },
     };
   
       $.ajax(settings1).done(function(data1) {
