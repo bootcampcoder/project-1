@@ -32,6 +32,8 @@ function ajaxCall(){
         city.push(event.venue.address.city);
         lat.push(event.venue.latitude);
         lng.push(event.venue.longitude);
+
+        
         
     })
     console.log(city[0]);
@@ -41,7 +43,6 @@ function ajaxCall(){
     });
     
 }
-
 //var longitude = [lat, lng];
 //console.log(longitude);
 
