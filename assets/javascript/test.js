@@ -22,6 +22,10 @@ function getSubCategories(){
   });
 
 }
+function clearSubcat()
+{
+    $("#sel-sub-category").empty();
+}
 
 function useSubcat(catg)
 {
@@ -33,9 +37,12 @@ function useSubcat(catg)
     let categoryID = subCategories[0].parent_category.id;
     console.log("Parent categoryId: ", categoryID);
 
-   
+    
+        
     subCategories.forEach(element => {
-      if (catg == element.parent_category.name) {
+      
+        if (catg == element.parent_category.name) {
+         
         $("#sel-sub-category").append(
           `<option class="sub-category-items">${element.name}</option>`
         );
@@ -52,6 +59,7 @@ debugger;
     .children("option:selected")
     .val();
   useSubcat(selCategory);
+  //clearSubcat();
 });
 
 
