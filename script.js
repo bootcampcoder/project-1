@@ -1,100 +1,75 @@
+
  var map;
  var events;
  var eventName = [];
  var city =[];
  var lat = [];
  var lng = [];
-  // queryURL for Eventbrite API
-var queryURL = "https://www.eventbriteapi.com/v3/events/search/?location.address=toronto&location.within=10km&expand=venue&price=free&token=VNY6JP3JJDWS6LAXZSVY;";
+ var location;
 
-function ajaxCall(){
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function(response) {
-     //debugger;
-     console.log(response);
-     var eventObj = response.events;
-     //console.log(eventObj);
+  // queryURL for Eventbrite API
+ function ajaxCall(){
+   //debugger;
+    var queryURL = "https://www.eventbriteapi.com/v3/events/search/?location.address=toronto&expand=venue&price=freehttps://www.eventbriteapi.com/v3/events/search/?location.address=toronto&location.within=10km&expand=venue&price=free&token=VNY6JP3JJDWS6LAXZSVY";
+    var settings = {
+       async: true,
+       crossDomain: true,
+       url: queryURL,
+       method: "GET",
+     };
+       $.ajax(settings).done(function(data) {
+     var eventObj = data.events;
 
      eventObj.forEach(event => {
+
         eventName.push(event.name.text);
-         city.push(event.venue.address.city);
-         lat.push(event.venue.latitude);
-         lng.push(event.venue.longitude);
-         
+        city.push(event.venue.address.city);
+        lat.push(event.venue.latitude);
+        lng.push(event.venue.longitude);
      })
      console.log(city[0]);
-     console.log(lat[0]);
-     console.log(lng[0]);
+     console.log(parseFloat(lat[0]));
+     console.log(parseFloat(lng[0]));
      console.log(eventName[0]);
+     eqfeed_callback();
      });
      
-}
-
-var longitude = [lat, lng];
-console.log(longitude);
-
-ajaxCall();
-
- function initMap(){
-     var options = {
-        //  center: {lat:43.653226 , lng: -79.383},
-         center:longitude,
-         zoom: 10
-     };
-
-     map = new google.maps.Map(document.getElementById("map"), options);
-
-     var currentLocation = new google.maps.Marker({
-         position: options.center,
-         map: map
-     })
-
-     var input = document.getElementById("search");
-     var searchBox = new google.maps.places.SearchBox(input);
-
-     map.addListener("bounds_changed", function(){
-         searchBox.setBounds(map.getBounds());
-     })
-
-     //get search results on the map
-     var markers = [];
-
-     searchBox.addListener("places_changed", function(){
-         var places = searchBox.getPlaces();
-
-         if(places.length === 0)
-         return;
-
-         markers.forEach(function(m){
-             m.setMap(null);
-         });
-         markers = [];
-
-         var bounds = new google.maps.LatLngBounds();
-
-         places.forEach(function(p){
-             if(!p.geometry)
-             return;
-
-             markers.push(new google.maps.Marker({
-                 map: map,
-                 title: p.name,
-                 position: p.geometry.location
-             }));
-
-             if(p.geometry.viewport)
-             bounds.union(p.geometry.viewport);
-             else
-             bounds.extend(p.geometry.location);
-         });
-         map.fitBounds(bounds);
-     })
-
  }
-
+ ajaxCall();
  
+   function initMap() {
+     map = new google.maps.Map(document.getElementById('map'), {
+       zoom: 12,
+       center: new google.maps.LatLng(43.6532,-79.3832),
+       mapTypeId: 'terrain'
+      
+     });
+
+   } 
+  initMap();
+   
+ function eqfeed_callback() {
+      // debugger;
+     for (var i = 0; i < eventName.length; i++) {
+         //var coords = results.features[i].geometry.coordinates;
+         var latLng = new google.maps.LatLng(lat[i],lng[i]);
+
+         var marker = new google.maps.Marker({
+           position: latLng,
+           map: map
+         });
+
+         var infoWindow = new google.maps.InfoWindow({
+            content:`<h2>${eventName[i]}</h2>` 
+         });
+    
+         marker.addListener('click', function(position) {
+            infoWindow.open(position, marker);
+          });
+
+       }  
+ 
+ }
     
 
  
