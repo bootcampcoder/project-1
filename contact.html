@@ -6,64 +6,115 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact Page</title>
     <style>
-        body {font-family: Arial, Helvetica, sans-serif;}
-        * {box-sizing: border-box;}
-        
-        input[type=text], select, textarea {
-          width: 100%;
-          padding: 12px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-          margin-top: 6px;
-          margin-bottom: 16px;
-          resize: vertical;
+        *{
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
         }
-        
-        input[type=submit] {
-          background-color: #4CAF50;
+        .team-section{
+          overflow: hidden;
+          text-align: center;
+          background: #34495e;
+          padding: 60px;
+        }
+
+        .team-section h1 {
+          text-transform: uppercase;
+          margin-bottom: 60px;
           color: white;
-          padding: 12px 20px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
+          font-size: 40px;
         }
-        
-        input[type=submit]:hover {
-          background-color: #45a049;
+        .border {
+          display:block;
+          margin: auto;
+          width: 160px;
+          height: 3px;
+          background: #3498db;
+          margin-bottom: 40px;
         }
-        
-        .container {
-          border-radius: 5px;
-          background-color: #f2f2f2;
-          padding: 20px;
+        .ps {
+          margin-bottom: 40px;
+
         }
+        .ps a {
+          display: inline-block;
+          margin: 0 30px;
+          width: 160px;
+          height: 160px;
+          overflow: hidden;
+          border-radius: 50%;
+        }
+        .ps a img {
+          width: 100%;
+          filter: grayscale(100%);
+          transition: 0.4s all;
+        }
+        .ps a:hover > img {
+          filter: none;
+        }
+        .section {
+          width: 600px;
+          margin: auto;
+          font-size: 20px;
+          color: white;
+          text-align: justify;
+          height: 0;
+          overflow: hidden;
+        }
+        .section:target{
+          height: auto;
+        }
+        .name {
+          display: block;
+          margin-bottom: 30px;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 22px;
+        }
+        p {
+          text-align: center;
+        }
+
         </style>
 </head>
 <body>
-        <h3>Contact Form</h3>
+       <div class="team-section">
+         <h1>Our Team</h1>
+         <span class="border"></span>
+         <div class="ps">
+           <a href="#p1"><img src="myimage.png" alt="pic"></a>
+           <a href="#p2"><img src="myimage.png" alt="pic"></a>
+           <a href="#p3"><img src="myimage.png" alt="pic"></a>
 
-        <div class="container">
-          <form action="/action_page.php">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        
-            <label for="country">Country</label>
-            <select id="country" name="country">
-              <option value="australia">USA</option>
-              <option value="canada">Canada</option>
-              <option value="usa">England</option>
-            </select>
-        
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-        
-            <input type="submit" value="Submit">
-          </form>
+         </div>
+         <div class="section " id="p1">
+           <span class="name">Tej Subedi</span>
+           <span class="border"></span>
+           <p>
+            Email:tejsuebdi@gmail.com <br>
+            Facebook: tejsubedi<br>
+            Twitter: 
+          </p>
+         </div>
+         <div class="section" id="p2">
+          <span class="name">Ravi Joshi</span>
+          <span class="border"></span>
+          <p>
+              Email:ravijoshi@gmail.com<br>
+              Facebook: ravijoshi<br>
+              Twitter: 
+           </p>
         </div>
+        <div class="section" id="p3">
+          <span class="name">Raj Shahu</span>
+          <span class="border"></span>
+          <p>
+              Email:rajshahu@gmail.com<br>
+              Facebook: rajshahu<br>
+              Twitter: 
+            </p>
+        </div>
+       </div>
     
 </body>
 </html>
