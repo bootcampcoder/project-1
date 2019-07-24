@@ -27,6 +27,7 @@ auth.onAuthStateChanged(user => {
       $("#home-content").show();
       loggedOutLinks.hide();
       loggedInLinks.show();
+      $(".calendar-container").show();
 
     } else {
       console.log('user logged out');
@@ -34,6 +35,7 @@ auth.onAuthStateChanged(user => {
       $(".logged-out-message").show();
       loggedOutLinks.show();
       loggedInLinks.hide();
+      $(".calendar-container").hide();
     }
   })
 
