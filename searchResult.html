@@ -47,17 +47,17 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-bars" style="font-size:36px"></i></a>
           <ul class="right hide-on-med-and-down">
             <li class="logged-in" style="display:none;">
-              <a class="grey-text " href="calendar.html">Event This Month</a>
+              <a class=" " href="calendar.html">Event This Month</a>
             </li>
             <li class="">
-              <a class="grey-text " href="#">Contact</a>
+              <a class=" " href="#">Contact</a>
             </li>
             <li class="">
-              <a class="grey-text " href="#">Help</a>
+              <a class=" " href="#">Help</a>
             </li>
 
             <li class=" logged-in" style="display:none;">
-              <a href="#" class="grey-text" id="logout"
+              <a href="#" class="" id="logout"
                 ><span id="logged-user"></span>Logout</a
               >
             </li>
@@ -65,7 +65,7 @@
             <li class=" logged-out" style="display:none;">
               <a
                 href="#"
-                class=" grey-text modal-trigger"
+                class="  modal-trigger"
                 data-target="modal-login"
                 >Login</a
               >
@@ -73,7 +73,7 @@
             <li class=" logged-out" style="display:none;">
               <a
                 href="#"
-                class="grey-text modal-trigger"
+                class=" modal-trigger"
                 data-target="modal-signup"
                 >Sign up</a
               >
@@ -85,17 +85,17 @@
       </nav>
       <ul class="sidenav" id="mobile-demo">
           <li class="logged-in" style="display:none;">
-            <a class="grey-text " href="calendar.html">Event This Month</a>
+            <a class=" " href="calendar.html">Event This Month</a>
           </li>
           <li class="">
-            <a class="grey-text " href="#">Contact</a>
+            <a class=" " href="#">Contact</a>
           </li>
           <li class="">
-            <a class="grey-text " href="#">Help</a>
+            <a class=" " href="#">Help</a>
           </li>
 
           <li class=" logged-in" style="display:none;">
-            <a href="#" class="grey-text" id="logout"
+            <a href="#" class="" id="logout"
               ><span id="logged-user"></span>Logout</a
             >
           </li>
@@ -103,7 +103,7 @@
           <li class=" logged-out" style="display:none;">
             <a
               href="#"
-              class=" grey-text modal-trigger"
+              class="  modal-trigger"
               data-target="modal-login"
               >Login</a
             >
@@ -118,51 +118,51 @@
           </li>
 
         </ul>
+<hr>
+        <div class="m-4 container mx-auto" >
+            <form>
+              <div class="p-1 search-form mb-4">
+                <div class="input-group row">
+                  <div class="input-field col s12">
+                    <input
+                      type="text"
+
+                      class="form-control"
+                    />
+                    <label for="search">Search</label>
+                  </div>
+                  <div class="input-group-append">
+                    <button
+                      id=""
+                      type="submit"
+                      onclick="window.location.href='/searchResult.html'"
+                      class="waves-effect waves-light btn-large"
+                    >
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class=" filter">
+              <button
+                type="button"
+                id="filter-btn"
+                class="waves-effect waves-light btn-large"
+                data-toggle="modal"
+                data-target="#filterModal"
+              >
+                <i class="fa fa-angle-double-down"></i>
+              </button>
+            </div>
+          </div>
+
+          <hr>
 
       <div class="row mb-5">
         <div class="col-lg-12 ">
           <div class="mt-2 mx-auto shadow search-container">
-              <div class="row">
-                  <div class="col-10 mx-auto m-4">
-                      <form>
-                          <div class="p-1 search-form mb-4">
-                            <div class="input-group row">
-                              <div class="input-field col s12">
-                                <input
-                                  type="text"
 
-                                  class="form-control"
-                                />
-                                <label for="search">Search</label>
-                              </div>
-                              <div class="input-group-append">
-                                <button
-                                  id=""
-                                  type="submit"
-                                  onclick="window.location.href='/searchResult.html'"
-                                  class="waves-effect waves-light btn-large"
-                                >
-                                  <i class="fa fa-search"></i>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                  </div>
-                  <div class="col-2 mx-auto mt-4">
-                      <div class=" filter">
-                          <button
-                            type="button"
-                            id="filter-btn"
-                            class="waves-effect waves-light btn-large"
-                            data-toggle="modal"
-                            data-target="#filterModal"
-                          >
-                            <i class="fa fa-angle-double-down"></i>
-                          </button>
-                        </div>
-                  </div>
-                </div>
 
                 <div class="modal fade" id="filterModal">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -260,27 +260,23 @@
 
             <div class="row">
               <div class="col-lg-3 col-sm-3 mx-auto bg-white">
-                <div class="card m-2">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">
-                      With supporting text below as a natural lead-in to
-                      additional content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-
-                <div class="card text-center m-2">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">
-                      With supporting text below as a natural lead-in to
-                      additional content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
+                  <ul class="collapsible">
+                      <li>
+                        <div class="collapsible-header">First</div>
+                        <div class="collapsible-body">
+                          <span>Lorem ipsum dolor sit amet.</span><br>
+                        <span><img src="https://materializecss.com/images/sample-1.jpg" alt="" width=275px;></span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">Second</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header">Third</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                      </li>
+                    </ul>
 
               </div>
               <div class="col-lg-8 col-sm-8 bg-white mx-auto ">
