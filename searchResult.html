@@ -4,15 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Event-Search/Search-Results</title>
+    <title>Event-Search</title>
+
     <!-- Added link to the jQuery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -26,130 +35,229 @@
   </head>
   <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="index.html">
-              <img src="assets/image/logo.png" alt="logo" srcset="assets/image/logo.png">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
+      <nav class="z-depth-0 nav-bg">
+          <div class="nav-wrapper container">
+        <a class="brand-logo" href="index.html">
+          <img
+            src="assets/image/logo.png"
+            alt="logo"
+            srcset="assets/image/logo.png"
+          />
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-bars" style="font-size:36px"></i></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="logged-in" style="display:none;">
+              <a class="grey-text " href="calendar.html">Event This Month</a>
+            </li>
+            <li class="">
+              <a class="grey-text " href="#">Contact</a>
+            </li>
+            <li class="">
+              <a class="grey-text " href="#">Help</a>
+            </li>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="calendar.html">Event This Month</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link " href="#">Help</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+            <li class=" logged-in" style="display:none;">
+              <a href="#" class="grey-text" id="logout"
+                ><span id="logged-user"></span>Logout</a
+              >
+            </li>
+
+            <li class=" logged-out" style="display:none;">
+              <a
+                href="#"
+                class=" grey-text modal-trigger"
+                data-target="modal-login"
+                >Login</a
+              >
+            </li>
+            <li class=" logged-out" style="display:none;">
+              <a
+                href="#"
+                class="grey-text modal-trigger"
+                data-target="modal-signup"
+                >Sign up</a
+              >
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+          <li class="logged-in" style="display:none;">
+            <a class="grey-text " href="calendar.html">Event This Month</a>
+          </li>
+          <li class="">
+            <a class="grey-text " href="#">Contact</a>
+          </li>
+          <li class="">
+            <a class="grey-text " href="#">Help</a>
+          </li>
+
+          <li class=" logged-in" style="display:none;">
+            <a href="#" class="grey-text" id="logout"
+              ><span id="logged-user"></span>Logout</a
+            >
+          </li>
+
+          <li class=" logged-out" style="display:none;">
+            <a
+              href="#"
+              class=" grey-text modal-trigger"
+              data-target="modal-login"
+              >Login</a
+            >
+          </li>
+          <li class=" logged-out" style="display:none;">
+            <a
+              href="#"
+              class="grey-text modal-trigger"
+              data-target="modal-signup"
+              >Sign up</a
+            >
+          </li>
+
+        </ul>
 
       <div class="row mb-5">
         <div class="col-lg-12 ">
           <div class="mt-2 mx-auto shadow search-container">
-            <div class="row">
-              <div class="col-10 mx-auto m-4">
-                <form action="">
-                  <div class=" search-form mb-4">
-                    <div class="input-group">
-                      <input
-                        type="search"
-                        placeholder="What're you searching for?"
-                        aria-describedby="button-addon1"
-                        class="form-control border-0"
-                      />
-                      <div class="input-group-append">
-                        <button
-                          id="button-addon1"
-                          type="submit"
-                          class="btn btn-link text-primary"
-                        >
-                          <i class="fa fa-search"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="col-2 mx-auto mt-4">
-                <div class=" ">
-                  <button
-                    type="button"
-                    id="filter-btn"
-                    class="btn "
-                    data-toggle="modal"
-                    data-target="#filterModal"
-                  >
-                    <i class="fa fa-angle-double-down"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
+              <div class="row">
+                  <div class="col-10 mx-auto m-4">
+                      <form>
+                          <div class="p-1 search-form mb-4">
+                            <div class="input-group row">
+                              <div class="input-field col s12">
+                                <input
+                                  type="text"
 
-            <div class="modal fade" id="filterModal">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content p-4">
-                  <div>
-                    <form action="">
-                      <div class="p-1 bg-white mb-4">
-                        <div class="input-group">
-                          <input
-                            type="search"
-                            placeholder="What're you searching for?"
-                            aria-describedby="button-addon1"
-                            class="form-control border-0 bg-white"
-                          />
-                          <div class="input-group-append">
+                                  class="form-control"
+                                />
+                                <label for="search">Search</label>
+                              </div>
+                              <div class="input-group-append">
+                                <button
+                                  id=""
+                                  type="submit"
+                                  onclick="window.location.href='/searchResult.html'"
+                                  class="waves-effect waves-light btn-large"
+                                >
+                                  <i class="fa fa-search"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                  </div>
+                  <div class="col-2 mx-auto mt-4">
+                      <div class=" filter">
+                          <button
+                            type="button"
+                            id="filter-btn"
+                            class="waves-effect waves-light btn-large"
+                            data-toggle="modal"
+                            data-target="#filterModal"
+                          >
+                            <i class="fa fa-angle-double-down"></i>
+                          </button>
+                        </div>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="filterModal">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content p-4">
+                        <div>
+                            <form>
+                                <div class="p-1 search-form mb-4">
+                                  <div class="input-group row">
+                                    <div class="input-field col s12">
+                                      <input
+                                        type="text"
+
+                                        class="form-control"
+                                      />
+                                      <label for="search">Search</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                      <button
+                                        id="button-addon"
+                                        type="submit"
+                                        onclick="window.location.href='/searchResult.html'"
+                                        class="waves-effect waves-light btn-small"
+                                      >
+                                        <i class="fa fa-search"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                        </div>
+                        <!-- Modal Header -->
+                        <div class="modal-header ">
+                          <h4 class="modal-title mb-4">Advanced Search</h4>
+                          <div class="close">
                             <button
-                              id="button-addon1"
-                              type="submit"
-                              class="btn btn-link text-primary"
+                              type="button"
+                              class="close-btn"
+                              data-dismiss="modal"
                             >
-                              <i class="fa fa-search"></i>
+                              Close <i class="fa fa-close" style="font-size:24px"></i>
                             </button>
                           </div>
                         </div>
-                      </div>
-                    </form>
-                  </div>
-                  <!-- Modal body -->
-                  <div class="modal-body">
-                      <form>
-                        <div class="row">
-                            <div class="form-group col-lg-6 col-sm-6">
-                                <label for="category">Category:</label>
-                                <select class="form-control" id="sel-category" name="category">
 
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <form>
+                            <div class="row">
+                              <div class="form-group col-lg-6 col-sm-6">
+                                <label for="category">Category:</label>
+                                <select
+                                  class="form-control"
+                                  id="sel-category"
+                                  name="category"
+                                >
+                                  <option selected>Select one</option>
                                 </select>
                               </div>
 
                               <div class="form-group col-lg-6 col-sm-6">
                                 <label for="subcategory">Subcategory:</label>
-                                <select class="form-control" id="sel-sub-category" name="subcategory">
-
+                                <select
+                                  class="form-control"
+                                  id="sel-sub-category"
+                                  name="subcategory"
+                                >
+                                  <option selected>Select one</option>
                                 </select>
                               </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <div class="reset">
+                                <button type="button" class="btn reset-btn">
+                                  Reset <i class="fa fa-refresh"></i>
+                                </button>
+                              </div>
+                              <div class="search">
+                                <button
+                                  type="submit"
+                                  onclick="window.location.href='/searchResult.html'"
+                                  class="btn search-btn"
+                                >
+                                  Search <i class="fa fa-search"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </form>
                         </div>
-                        <!-- Modal footer -->
-                    <div class="modal-footer">
-                      <div class="reset">
-                          <button type="button" class="btn reset-btn">Reset <i class="fa fa-refresh"></i></button>
                       </div>
-                        <div class="search">
-                            <button type="submit"  onclick="window.location.href='/searchResult.html'" class="btn search-btn">Search <i class="fa fa-search"></i></button>
-                        </div>
-
-                      </div>
-                      </form>
                     </div>
-                </div>
-              </div>
-            </div>
+                  </div>
+
+
+
             <div class="row">
               <div class="col-lg-3 col-sm-3 mx-auto bg-white">
                 <div class="card m-2">
@@ -197,19 +305,25 @@
       </footer>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+    <script></script>
+
     <script src="assets/javascript/app.js"></script>
     <!-- <script src="assets/javascript/categories.js"></script>
     <script src="assets/javascript/subcategories.js"></script> -->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
+    <script src="assets/javascript/auth.js"></script>
+    <script src="assets/javascript/test.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"
     ></script>
+
+
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
