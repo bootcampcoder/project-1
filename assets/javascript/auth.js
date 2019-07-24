@@ -52,10 +52,12 @@ signupForm.on("submit", (e)=>{
     const modal = $('#modal-signup');
     M.Modal.getInstance(modal).close();
     //signupForm.reset();
-
+    $('.error-signup').html('');
+  }).catch(error => {
+    $('.error-signup').html(error.message);
   });
 
-})
+});
 
 // logout
 const logout = $('#logout');
@@ -80,6 +82,9 @@ loginForm.on('submit', (e) => {
     const modal = $('#modal-login');
     M.Modal.getInstance(modal).close();
     //loginForm.reset();
+    $('.error').html('');
+  }).catch(err => {
+    $('.error').html(err.message);
   });
 
 });
