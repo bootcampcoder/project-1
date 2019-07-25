@@ -34,16 +34,37 @@ function ajaxCall(){
     };
       $.ajax(settings).done(function(data) {
     var eventObj = data.events;
+    console.log("Data: ",data);
     eventObj.forEach(event => {
        eventName.push(event.name.text);
        city.push(event.venue.address.city);
        lat.push(event.venue.latitude);
        lng.push(event.venue.longitude);
+
+
+
     })
+
+    for(var i =0; i < 25; i++){
+      $(".collapsible-search").append(`<li>
+      <div class="collapsible-header">${eventObj[i].name.text}</div>
+      <div class="collapsible-body">
+        <span>Starts on: ${moment(eventObj[i].start.local).format("YYYY-MM-DD HH:mm:ss")}</span><br />
+        <span>Ends on: ${moment(eventObj[i].end.local).format("YYYY-MM-DD HH:mm:ss")}</span><br />
+        <span
+          ><a href="${eventObj[i].url}"><img
+          src="${eventObj[i].logo.original.url}"
+          alt=""
+          width="70%"
+      /></a></span>
+      </div>
+    </li>`);
+    }
     console.log(city[0]);
     console.log(parseFloat(lat[0]));
     console.log(parseFloat(lng[0]));
     console.log(eventName[0]);
+
     eqfeed_callback();
     });
 
@@ -61,7 +82,7 @@ function eqfeed_callback() {
           map: map,
           title: eventName[i]
         });
-        console.log('eventname: '+eventName[i]);
+        //console.log('eventname: '+eventName[i]);
         // infoWindow = new google.maps.InfoWindow({
         //    content:`<h2>${eventName[i]}</h2>`
         // });
