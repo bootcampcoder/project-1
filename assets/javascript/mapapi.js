@@ -23,9 +23,10 @@ function initMap() {
 function ajaxCall(){
   //debugger;
 
+  //var searchstring  = $(this).text('.search-input');
 
-
-   var queryURL = "https://www.eventbriteapi.com/v3/events/search/?location.address=toronto&expand=venue&price=freehttps://www.eventbriteapi.com/v3/events/search/?location.address=toronto&location.within=10km&expand=venue&price=free&token=VNY6JP3JJDWS6LAXZSVY";
+   var searchstring = "toronto";
+   var queryURL = `https://www.eventbriteapi.com/v3/events/search/?location.address=${searchstring}&expand=venue&price=freehttps://www.eventbriteapi.com/v3/events/search/?location.address=toronto&location.within=10km&expand=venue&price=free&token=VNY6JP3JJDWS6LAXZSVY`;
    var settings = {
       async: true,
       crossDomain: true,
@@ -53,7 +54,7 @@ function ajaxCall(){
         <span>Ends on: ${moment(eventObj[i].end.local).format("YYYY-MM-DD HH:mm:ss")}</span><br />
         <span
           ><a href="${eventObj[i].url}"><img
-          src="${eventObj[i].logo.original.url}"
+          src=""
           alt=""
           width="70%"
       /></a></span>
@@ -98,3 +99,4 @@ function eqfeed_callback() {
         })(marker,content,infowindow));
       }
 }
+$(document).on("click", ".search-btn", ajaxCall);

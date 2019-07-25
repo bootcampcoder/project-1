@@ -73,10 +73,10 @@ function initEvents() {
 
     for (var i = 0; i < 4; i++) {
       var desc = data.events[i].description.text;
-      desc = desc.substring(0, 50);
+      desc = desc.substring(0, 35);
       console.log(desc);
       var title = data.events[i].name.text;
-      title = title.substring(0, 15);
+      title = title.substring(0, 7);
       console.log(title);
 
       $("#events-4").append(`<div class="col s12 m7" id="Result${i}">
@@ -86,7 +86,7 @@ function initEvents() {
         <div id="result${i}-card" class="card">
           <div class="card-image">
             <img height="150px" src=${data.events[i].logo.original.url}>
-            <span class="card-title">${title}</span>
+            <p class="h6 card-title">${title}</p>
           </div>
           <div class="card-content">
             <p> ${desc}</p>

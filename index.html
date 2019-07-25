@@ -30,6 +30,7 @@
       href="https://fonts.googleapis.com/css?family=BioRhyme|Karla|Montserrat|Noto+Sans&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -168,34 +169,38 @@
               <p class="logged-out-message h3">
                 You are currently logged out. Please log in to use this
                 application.
-              </p>
+              </p><br>
+              <button
+                          id="home-content"
+                          type="submit"
+
+                          class="search-btn waves-effect waves-light btn-large"
+                        >
+                          <i class="fa fa-search"></i>
+                        Search Free Events</button>
             </div>
-            <div id="home-content" style="display:none;">
-              <form>
+            <div id="" style="display:none;" class="row align-center">
+              <!-- <form>
                 <div class="p-1 search-form mb-4">
                   <div class="input-group row">
-                    <div class="input-field col s12">
-                      <input
+                    <div class="input-field col s12"> -->
+                      <!-- <input
                         type="text"
 
                         class="form-control search-input"
                       />
                       <label for="search">Search</label>
                     </div>
-                    <div class="input-group-append">
-                      <button
-                        id=""
-                        type="submit"
+                    <div class="input-group-append"> -->
 
-                        class="search-btn waves-effect waves-light btn-large"
-                      >
-                        <i class="fa fa-search"></i>
-                      </button>
-                    </div>
+
+
+
+                    <!-- </div>
                   </div>
                 </div>
-              </form>
-              <div class=" filter">
+              </form> -->
+              <!-- <div class=" filter">
                 <button
                   type="button"
                   id="filter-btn"
@@ -204,7 +209,7 @@
                   data-target="#filterModal"
                 >
                   <i class="fa fa-angle-double-down"></i>
-                </button>
+                </button> -->
               </div>
             </div>
 
@@ -338,6 +343,7 @@
     <script src="assets/javascript/search.js"></script>
     <script src="assets/javascript/mapapi.js"></script>
     <script src="assets/javascript/getLocation.js"></script>
+    <script src="assets/javascript/eventbrite.js"></script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script
@@ -346,7 +352,11 @@
       crossorigin="anonymous"
     ></script>
 
-
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwWTWiIHOwxao1V9TG8GMQlqj1utG598Y&libraries=places&callback=initMap"
+    async
+    defer
+  ></script>
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
