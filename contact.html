@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Page</title>
+
+    <!-- Added link to the jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=BioRhyme|Karla|Montserrat|Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+
+        .team-section{
+          overflow: hidden;
+          text-align: center;
+          background: #34495e;
+          padding: 60px;
+        }
+        .team-section h1 {
+          text-transform: uppercase;
+          margin-bottom: 60px;
+          color: white;
+          font-size: 40px;
+        }
+        .border {
+          display:block;
+          margin: auto;
+          width: 180px;
+          height: 3px;
+          background: #3498db;
+          margin-bottom: 40px;
+        }
+        .ps {
+          margin-bottom: 40px;
+        }
+        .ps a {
+          display: inline-block;
+          margin: 0 30px;
+          width: 160px;
+          height: 160px;
+          overflow: hidden;
+          border-radius: 50%;
+        }
+        .ps a img {
+          width: 100%;
+          filter: grayscale(100%);
+          transition: 0.4s all;
+        }
+        .ps a:hover > img {
+          filter: none;
+        }
+        .section {
+          width: 700px;
+          margin: auto;
+          font-size: 20px;
+          color: white;
+          text-align: justify;
+          height: 0;
+          overflow: hidden;
+        }
+        .section:target{
+          height: 100%;
+        }
+        .name {
+          display: block;
+          margin-bottom: 30px;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 22px;
+        }
+        p {
+          text-align: center;
+        }
+        </style>
+</head>
+<body>
+    <div class="container-fluid">
+      <nav class="z-depth-0 nav-bg">
+          <div class="nav-wrapper container">
+        <a class="brand-logo" href="index.html">
+          <img
+            src="assets/image/logo.png"
+            alt="logo"
+            srcset="assets/image/logo.png"
+          />
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-bars" style="font-size:36px"></i></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="logged-in" style="display:none;">
+              <a class=" " href="calendar.html">Event This Month</a>
+            </li>
+            <li class="">
+              <a class=" " href="contact.html">Contact</a>
+            </li>
+            <li class="">
+              <a class=" " href="help.html">Help</a>
+            </li>
+
+            <li class=" logged-in" style="display:none;">
+              <a href="#" class="" id="logout"
+                ><span id="logged-user"></span>Logout</a
+              >
+            </li>
+
+            <li class=" logged-out" style="display:none;">
+              <a
+                href="#"
+                class=" modal-trigger"
+                data-target="modal-login"
+                >Login</a
+              >
+            </li>
+            <li class=" logged-out" style="display:none;">
+              <a
+                href="#"
+                class="modal-trigger"
+                data-target="modal-signup"
+                >Sign up</a
+              >
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+          <li class="logged-in" style="display:none;">
+            <a class=" " href="calendar.html">Event This Month</a>
+          </li>
+          <li class="">
+            <a class=" " href="#">Contact</a>
+          </li>
+          <li class="">
+            <a class=" " href="#">Help</a>
+          </li>
+
+          <li class=" logged-in" style="display:none;">
+            <a href="#" class="grey-text" id="logout"
+              ><span id="logged-user"></span>Logout</a
+            >
+          </li>
+
+          <li class=" logged-out" style="display:none;">
+            <a
+              href="#"
+              class="  modal-trigger"
+              data-target="modal-login"
+              >Login</a
+            >
+          </li>
+          <li class=" logged-out" style="display:none;">
+            <a
+              href="#"
+              class=" modal-trigger"
+              data-target="modal-signup"
+              >Sign up</a
+            >
+          </li>
+
+        </ul>
+
+      <!-- SIGN UP MODAL -->
+      <div id="modal-signup" class="modal">
+        <div class="modal-content">
+          <h4>Sign up</h4>
+          <br />
+          <form id="signup-form">
+            <div class="input-field">
+              <input type="email" id="signup-email" required />
+              <label for="signup-email">Email address</label>
+            </div>
+            <div class="input-field">
+              <input type="password" id="signup-password" required />
+              <label for="signup-password">Choose password</label>
+            </div>
+
+            <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+            <p class="error-signup pink-text center-align"></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- LOGIN MODAL -->
+      <div id="modal-login" class="modal">
+        <div class="modal-content">
+          <h4>Login</h4>
+          <br />
+          <form id="login-form">
+            <div class="input-field">
+              <input type="email" id="login-email" required />
+              <label for="login-email">Email address</label>
+            </div>
+            <div class="input-field">
+              <input type="password" id="login-password" required />
+              <label for="login-password">Your password</label>
+            </div>
+            <button class="btn yellow darken-2 z-depth-0">Login</button>
+            <p class="error pink-text center-align"></p>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="team-section">
+        <h1>Our Team</h1>
+        <span class="border"></span>
+        <div class="ps">
+          <a href="#p1"><img src="assets/image/tej-photo.jpeg" alt="tej-photo"></a>
+          <a href="#p2"><img src="assets/image/ravi-photo.jpg" alt="ravi-photo"></a>
+          <a href="#p3"><img src="assets/image/raj-photo.jpg" alt="raj-photo"></a>
+
+        </div>
+        <div class="section " id="p1">
+          <span class="name">Tej Subedi</span>
+          <span class="border"></span>
+          <p>
+           Email:tejsuebdi@gmail.com <br>
+           Facebook: tejsubedi<br>
+           Twitter:
+         </p>
+        </div>
+        <div class="section" id="p2">
+         <span class="name">Ravi Joshi</span>
+         <span class="border"></span>
+         <p>
+             Email:ravipiyushjoshi@gmail.com
+             <br>
+             Facebook: facebook.com/ravijoshi<br>
+             Twitter:
+          </p>
+       </div>
+       <div class="section" id="p3">
+         <span class="name">Raj Shahu</span>
+         <span class="border"></span>
+         <p>
+             Email:rajkumarshahu@gmail.com<br>
+             Facebook: https://www.facebook.com/rajkumarshahu<br>
+             Twitter:
+           </p>
+       </div>
+      </div>
+
+       <div class="p-5">&nbsp;</div>
+       <footer class="footer fixed-bottom py-4 text-white">
+         <div class="container text-center">
+           <small
+             >&copy;
+             <script type="text/javascript">
+               document.write(new Date().getFullYear());
+             </script>
+             UofT SCS Coding Bootcamp (BootCampCoder)</small
+           >
+         </div>
+       </footer>
+     </div>
+     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+     <script></script>
+
+     <script src="assets/javascript/app.js"></script>
+     <!-- <script src="assets/javascript/categories.js"></script>
+     <script src="assets/javascript/subcategories.js"></script> -->
+     <script src="assets/javascript/auth.js"></script>
+     <script src="assets/javascript/test.js"></script>
+     <script src="assets/javascript/search.js"></script>
+     <script src="assets/javascript/mapapi.js"></script>
+     <script src="assets/javascript/getLocation.js"></script>
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <script
+       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+       crossorigin="anonymous"
+     ></script>
+
+
+     <script
+       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+       crossorigin="anonymous"
+     ></script>
+   </body>
+ </html>

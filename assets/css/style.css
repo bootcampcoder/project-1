@@ -56,3 +56,6 @@ a:hover {
   text-decoration: none;
   color: grey;
 }
+#map {
+  height: 500px;
+}

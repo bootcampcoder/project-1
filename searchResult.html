@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Event-Search</title>
 
+    <!-- Javascript external srcipt tag -->
+    <script src="assets/javascript/mapapi.js" async defer></script>
+
     <!-- Added link to the jQuery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -36,24 +39,26 @@
   <body>
     <div class="container-fluid">
       <nav class="z-depth-0 nav-bg">
-          <div class="nav-wrapper container">
-        <a class="brand-logo" href="index.html">
-          <img
-            src="assets/image/logo.png"
-            alt="logo"
-            srcset="assets/image/logo.png"
-          />
-        </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-bars" style="font-size:36px"></i></a>
+        <div class="nav-wrapper container">
+          <a class="brand-logo" href="index.html">
+            <img
+              src="assets/image/logo.png"
+              alt="logo"
+              srcset="assets/image/logo.png"
+            />
+          </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="fa fa-bars" style="font-size:36px"></i
+          ></a>
           <ul class="right hide-on-med-and-down">
             <li class="logged-in" style="display:none;">
               <a class=" " href="calendar.html">Event This Month</a>
             </li>
             <li class="">
-              <a class=" " href="#">Contact</a>
+              <a class=" " href="contact.html">Contact</a>
             </li>
             <li class="">
-              <a class=" " href="#">Help</a>
+              <a class=" " href="help.html">Help</a>
             </li>
 
             <li class=" logged-in" style="display:none;">
@@ -63,229 +68,229 @@
             </li>
 
             <li class=" logged-out" style="display:none;">
-              <a
-                href="#"
-                class="  modal-trigger"
-                data-target="modal-login"
+              <a href="#" class="  modal-trigger" data-target="modal-login"
                 >Login</a
               >
             </li>
             <li class=" logged-out" style="display:none;">
-              <a
-                href="#"
-                class=" modal-trigger"
-                data-target="modal-signup"
+              <a href="#" class=" modal-trigger" data-target="modal-signup"
                 >Sign up</a
               >
             </li>
-
           </ul>
-
         </div>
       </nav>
       <ul class="sidenav" id="mobile-demo">
-          <li class="logged-in" style="display:none;">
-            <a class=" " href="calendar.html">Event This Month</a>
-          </li>
-          <li class="">
-            <a class=" " href="#">Contact</a>
-          </li>
-          <li class="">
-            <a class=" " href="#">Help</a>
-          </li>
+        <li class="logged-in" style="display:none;">
+          <a class=" " href="calendar.html">Event This Month</a>
+        </li>
+        <li class="">
+          <a class=" " href="contact.html">Contact</a>
+        </li>
+        <li class="">
+          <a class=" " href="help.html">Help</a>
+        </li>
 
-          <li class=" logged-in" style="display:none;">
-            <a href="#" class="" id="logout"
-              ><span id="logged-user"></span>Logout</a
-            >
-          </li>
+        <li class=" logged-in" style="display:none;">
+          <a href="#" class="" id="logout"
+            ><span id="logged-user"></span>Logout</a
+          >
+        </li>
 
-          <li class=" logged-out" style="display:none;">
-            <a
-              href="#"
-              class="  modal-trigger"
-              data-target="modal-login"
-              >Login</a
-            >
-          </li>
-          <li class=" logged-out" style="display:none;">
-            <a
-              href="#"
-              class="grey-text modal-trigger"
-              data-target="modal-signup"
-              >Sign up</a
-            >
-          </li>
-
-        </ul>
-<hr>
-        <div class="m-4 container mx-auto" >
-            <form>
-              <div class="p-1 search-form mb-4">
-                <div class="input-group row">
-                  <div class="input-field col s12">
-                    <input
-                      type="text"
-
-                      class="form-control"
-                    />
-                    <label for="search">Search</label>
-                  </div>
-                  <div class="input-group-append">
-                    <button
-                      id=""
-                      type="submit"
-                      onclick="window.location.href='/searchResult.html'"
-                      class="waves-effect waves-light btn-large search-btn"
-                    >
-                      <i class="fa fa-search"></i>
-                    </button>
-                  </div>
-                </div>
+        <li class=" logged-out" style="display:none;">
+          <a href="#" class="  modal-trigger" data-target="modal-login"
+            >Login</a
+          >
+        </li>
+        <li class=" logged-out" style="display:none;">
+          <a href="#" class="grey-text modal-trigger" data-target="modal-signup"
+            >Sign up</a
+          >
+        </li>
+      </ul>
+      <hr />
+      <div class="m-4 container mx-auto">
+        <form>
+          <div class="p-1 search-form mb-4">
+            <div class="input-group row">
+              <div class="input-field col s12">
+                <input type="text" class="form-control" />
+                <label for="search">Search</label>
               </div>
-            </form>
-            <div class=" filter">
-              <button
-                type="button"
-                id="filter-btn"
-                class="waves-effect waves-light btn-large"
-                data-toggle="modal"
-                data-target="#filterModal"
-              >
-                <i class="fa fa-angle-double-down"></i>
-              </button>
+              <div class="input-group-append">
+                <button
+                  id=""
+                  type="submit"
+                  onclick="window.location.href='/searchResult.html'"
+                  class="waves-effect waves-light btn-large search-btn"
+                >
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
             </div>
           </div>
+        </form>
+        <div class=" filter">
+          <button
+            type="button"
+            id="filter-btn"
+            class="waves-effect waves-light btn-large"
+            data-toggle="modal"
+            data-target="#filterModal"
+          >
+            <i class="fa fa-angle-double-down"></i>
+          </button>
+        </div>
+      </div>
 
-          <hr>
+      <hr />
 
       <div class="row mb-5">
         <div class="col-lg-12 ">
           <div class="mt-2 mx-auto shadow search-container">
-
-
-                <div class="modal fade" id="filterModal">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                      <div class="modal-content p-4">
-                        <div>
-                            <form>
-                                <div class="p-1 search-form mb-4">
-                                  <div class="input-group row">
-                                    <div class="input-field col s12">
-                                      <input
-                                        type="text"
-
-                                        class="form-control"
-                                      />
-                                      <label for="search">Search</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                      <button
-                                        id="button-addon"
-                                        type="submit"
-                                        onclick="window.location.href='/searchResult.html'"
-                                        class="waves-effect waves-light btn-small"
-                                      >
-                                        <i class="fa fa-search"></i>
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </form>
-                        </div>
-                        <!-- Modal Header -->
-                        <div class="modal-header ">
-                          <h4 class="modal-title mb-4">Advanced Search</h4>
-                          <div class="close">
+            <div class="modal fade" id="filterModal">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content p-4">
+                  <div>
+                    <form>
+                      <div class="p-1 search-form mb-4">
+                        <div class="input-group row">
+                          <div class="input-field col s12">
+                            <input type="text" class="form-control" />
+                            <label for="search">Search</label>
+                          </div>
+                          <div class="input-group-append">
                             <button
-                              type="button"
-                              class="close-btn"
-                              data-dismiss="modal"
+                              id="button-addon"
+                              type="submit"
+                              onclick="window.location.href='/searchResult.html'"
+                              class="waves-effect waves-light btn-small"
                             >
-                              Close <i class="fa fa-close" style="font-size:24px"></i>
+                              <i class="fa fa-search"></i>
                             </button>
                           </div>
                         </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                          <form>
-                            <div class="row">
-                              <div class="form-group col-lg-6 col-sm-6">
-                                <label for="category">Category:</label>
-                                <select
-                                  class="form-control"
-                                  id="sel-category"
-                                  name="category"
-                                >
-                                  <option selected>Select one</option>
-                                </select>
-                              </div>
-
-                              <div class="form-group col-lg-6 col-sm-6">
-                                <label for="subcategory">Subcategory:</label>
-                                <select
-                                  class="form-control"
-                                  id="sel-sub-category"
-                                  name="subcategory"
-                                >
-                                  <option selected>Select one</option>
-                                </select>
-                              </div>
-                            </div>
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                              <div class="reset">
-                                <button type="button" class="btn reset-btn">
-                                  Reset <i class="fa fa-refresh"></i>
-                                </button>
-                              </div>
-                              <div class="search">
-                                <button
-                                  type="submit"
-                                  onclick="window.location.href='/searchResult.html'"
-                                  class="btn search-btn"
-                                >
-                                  Search <i class="fa fa-search"></i>
-                                </button>
-                              </div>
-                            </div>
-                          </form>
-                        </div>
                       </div>
+                    </form>
+                  </div>
+                  <!-- Modal Header -->
+                  <div class="modal-header ">
+                    <h4 class="modal-title mb-4">Advanced Search</h4>
+                    <div class="close">
+                      <button
+                        type="button"
+                        class="close-btn"
+                        data-dismiss="modal"
+                      >
+                        Close <i class="fa fa-close" style="font-size:24px"></i>
+                      </button>
                     </div>
                   </div>
 
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <form>
+                      <div class="row">
+                        <div class="form-group col-lg-6 col-sm-6">
+                          <label for="category">Category:</label>
+                          <select
+                            class="form-control"
+                            id="sel-category"
+                            name="category"
+                          >
+                            <option selected>Select one</option>
+                          </select>
+                        </div>
 
+                        <div class="form-group col-lg-6 col-sm-6">
+                          <label for="subcategory">Subcategory:</label>
+                          <select
+                            class="form-control"
+                            id="sel-sub-category"
+                            name="subcategory"
+                          >
+                            <option selected>Select one</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <div class="reset">
+                          <button type="button" class="btn reset-btn">
+                            Reset <i class="fa fa-refresh"></i>
+                          </button>
+                        </div>
+                        <div class="search">
+                          <button
+                            type="submit"
+                            onclick="window.location.href='/searchResult.html'"
+                            class="btn search-btn"
+                          >
+                            Search <i class="fa fa-search"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="row">
               <div class="col-lg-3 col-sm-3 mx-auto bg-white">
-                  <ul class="collapsible">
-                      <li>
-                        <div class="collapsible-header">First</div>
-                        <div class="collapsible-body">
-                          <span>Lorem ipsum dolor sit amet.</span><br>
-                        <span><img src="https://materializecss.com/images/sample-1.jpg" alt="" width=275px;></span>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="collapsible-header">Second</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                      </li>
-                      <li>
-                        <div class="collapsible-header">Third</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                      </li>
-                    </ul>
-
+                <ul class="collapsible">
+                  <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body">
+                      <span>Lorem ipsum dolor sit amet.</span><br />
+                      <span
+                        ><img
+                          src="https://materializecss.com/images/sample-1.jpg"
+                          alt=""
+                          width="275px;"
+                      /></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body">
+                      <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body">
+                      <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <div class="col-lg-8 col-sm-8 bg-white mx-auto ">
-                <img class="m-4" src="assets/image/map.png" alt="map" width="690px" />
+
+              <div class="col-lg-8 col-sm-8 bg-white mx-auto z-depth-5">
+                <div id="map"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <h1 class="display-4">My Map</h1>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col">
+            <input type="text" class="form-control" id="search" placeholder="search...">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div> -->
 
       <div class="p-5">&nbsp;</div>
       <footer class="footer fixed-bottom py-4 text-white">
@@ -312,14 +317,21 @@
     <script src="assets/javascript/auth.js"></script>
     <script src="assets/javascript/test.js"></script>
     <script src="assets/javascript/search.js"></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/javascript/getLocation.js"></script>
+    <!-- Google Maps API -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwWTWiIHOwxao1V9TG8GMQlqj1utG598Y&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"
     ></script>
-
 
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
