@@ -178,7 +178,7 @@
                       <input
                         type="text"
 
-                        class="form-control"
+                        class="form-control query"
                       />
                       <label for="search">Search</label>
                     </div>
@@ -228,7 +228,6 @@
                                 <button
                                   id="button-addon"
                                   type="submit"
-                                  onclick="window.location.href='/searchResult.html'"
                                   class="waves-effect waves-light btn-small"
                                 >
                                   <i class="fa fa-search"></i>
@@ -288,7 +287,6 @@
                         <div class="search">
                           <button
                             type="submit"
-                            onclick="window.location.href='/searchResult.html'"
                             class="btn search-btn"
                           >
                             Search <i class="fa fa-search"></i>
@@ -307,9 +305,9 @@
             <div class="text-center col s12 h3"><p>Top 4 things to do in Toronto</p></div>
           </div>
 
-        <div class="row mx-auto container things-to-do">
+        <div  id="events-4" class="row mx-auto container things-to-do">
 
-            <div class="col s3 m7">
+            <!-- <div class="col s3 m7">
                 <a href="http://" target="_blank" rel="noopener noreferrer">
                 <div class="card">
                   <div class="card-image">
@@ -383,14 +381,21 @@
                       </div>
                     </a>
                     </div>
-
+ 
 
 
 
 
           </div>
+          <div class=" container">
+            <div class="text-center col s12 h3"><p>Choose your Categories</p></div>
+          </div>
 
+          <div  id="categories-list" class="row mx-auto container choose-category">
 
+          </div>  
+
+          -->
 
       </div>
 
@@ -417,6 +422,7 @@
     <script></script>
 
     <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/initEvents.js"></script>
     <!-- <script src="assets/javascript/categories.js"></script>
     <script src="assets/javascript/subcategories.js"></script> -->
     <script src="assets/javascript/auth.js"></script>
