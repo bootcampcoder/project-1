@@ -49,7 +49,6 @@ function initCategory() {
 }
 
 function initEvents() {
-  // var queryURL = "https://www.eventbriteapi.com/v3/events/search?location.longitude="+longitutde+"&location.latitude="+latitude+"&price=free";
   var queryURL =
     "https://www.eventbriteapi.com/v3/events/search/?location.address=Toronto&location.within=20km&expand=venue&price=free&token=VNY6JP3JJDWS6LAXZSVY";
   var settings1 = {
@@ -57,20 +56,9 @@ function initEvents() {
     crossDomain: true,
     url: queryURL,
     method: "GET",
-    // headers: {
-    //    "Authorization": "Bearer VNY6JP3JJDWS6LAXZSVY",
-    //    "Content-Type": "application/json",
-    //  },
   };
 
   $.ajax(settings1).done(function(data) {
-    console.log(data);
-    //  console.log(data.categories[0].id);
-    //   console.log(data1.categories[0].name);
-
-    console.log(data.events[0].url);
-    // data.events[i].logo.original.url
-
     for (var i = 0; i < 4; i++) {
       var desc = data.events[i].description.text;
       desc = desc.substring(0, 35);
@@ -123,12 +111,8 @@ function clearSubcat() {
 }
 
 function useSubcat(catg) {
-  console.log(subcat);
-  console.log(subcat.subcategories[0].id);
-  console.log(subcat.subcategories[0].name);
   let subCategories = subcat.subcategories;
   let categoryID = subCategories[0].parent_category.id;
-  console.log("Parent categoryId: ", categoryID);
 
   subCategories.forEach(element => {
     if (catg == element.parent_category.name) {
@@ -161,10 +145,6 @@ var getCategories = function() {
   };
 
   $.ajax(settings1).done(function(data1) {
-    //   console.log(data1);
-    console.log(data1.categories[0].id);
-    //   console.log(data1.categories[0].name);
-
     let categories = data1.categories;
     cat = categories;
     categories.forEach(element => {
@@ -177,6 +157,5 @@ var getCategories = function() {
   });
 };
 
-//getLocation();
 initEvents();
 getCategories();

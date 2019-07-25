@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Contact Page</title>
 
     <!-- Added link to the jQuery library -->
@@ -33,197 +33,198 @@
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 10px;
+        font-family: "Roboto", sans-serif;
+      }
+      body {
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+      section {
+        padding: 10rem 0;
+        background-color: #ffffff;
+      }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  font-size: 10px;
-  font-family: "Roboto", sans-serif;
-}
-body {
-  overflow-x: hidden;
-}
-a {
-  text-decoration: none;
-  color: #ffffff;
-}
-section {
-  padding: 10rem 0;
-  background-color: #ffffff;
-}
+      .heading {
+        text-transform: uppercase;
+        font-size: 3.5rem;
+        letter-spacing: 3px;
+        margin-right: -3px;
+        margin-bottom: 5rem;
+        text-align: center;
+        color: #333333;
+        position: relative;
+      }
 
-.heading {
-  text-transform: uppercase;
-  font-size: 3.5rem;
-  letter-spacing: 3px;
-  margin-right: -3px;
-  margin-bottom: 5rem;
-  text-align: center;
-  color: #333333;
-  position: relative;
-}
+      .heading::after {
+        content: "";
+        width: 10rem;
+        height: 0.8rem;
+        background-color: #45e19f;
+        position: absolute;
+        bottom: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2rem;
+      }
+      .card-wrapper {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+      }
+      .card {
+        width: 32rem;
+        background-color: #ebeef8;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
+        box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.2);
+      }
 
-.heading::after {
-  content: "";
-  width: 10rem;
-  height: 0.8rem;
-  background-color: #45e19f;
-  position: absolute;
-  bottom: -2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2rem;
-}
-.card-wrapper {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  flex-direction: column;
-}
-.card {
-  width: 32rem;
-  background-color: #ebeef8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem 0;
-  box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.2);
-}
+      .card .card-img {
+        width: 100%;
+        height: 26rem;
+        object-fit: cover;
+        -webkit-clip-path: polygon(0 0, 100% 78%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+      }
+      .profile-img {
+        width: 15rem;
+        height: 15rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-top: -11rem;
+        z-index: 999;
+        border: 1rem solid #ebeef8;
+      }
+      .card h1 {
+        font-size: 2.5rem;
+        color: #333333;
+        margin: 1.5rem 0;
+      }
+      .job-title {
+        color: #777777;
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+      .about {
+        font-size: 1.5rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        text-align: center;
+        color: #333333;
+      }
+      .card .btn {
+        padding: 1rem 2.5rem;
+        background-color: #445ae3;
+        border-radius: 2rem;
+        margin: 1rem 0;
+        text-transform: uppercase;
+        color: #eee;
+        font-size: 1.4rem;
+        transition: all 0.5s;
+      }
+      .card .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
+      }
+      .card .btn:active {
+        transform: translateY(0);
+        box-shadow: none;
+      }
 
-.card .card-img {
-  width: 100%;
-  height: 26rem;
-  object-fit: cover;
-  -webkit-clip-path: polygon(0 0, 100% 78%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
-}
-.profile-img {
-  width: 15rem;
-  height: 15rem;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-top: -11rem;
-  z-index: 999;
-  border: 1rem solid #ebeef8;
-}
-.card h1 {
-  font-size: 2.5rem;
-  color: #333333;
-  margin: 1.5rem 0;
-}
-.job-title {
-  color: #777777;
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-.about {
-  font-size: 1.5rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-  text-align: center;
-  color: #333333;
-}
-.card .btn {
-  padding: 1rem 2.5rem;
-  background-color: #445ae3;
-  border-radius: 2rem;
-  margin: 1rem 0;
-  text-transform: uppercase;
-  color: #eee;
-  font-size: 1.4rem;
-  transition: all 0.5s;
-}
-.card .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
-}
-.card .btn:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
+      .social-media {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2rem 0;
+        margin-top: 1.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 1);
+      }
+      .social-media i {
+        font-size: 3rem;
+        transition: color 0.5s;
+      }
+      .fa-facebook-square {
+        color: #3b5999;
+      }
+      .fa-twitter-square {
+        color: #55acee;
+      }
+      .fa-instagram {
+        color: #e6683c;
+      }
+      .fa-google-plus-square {
+        color: #dd4b39;
+      }
+      .fa-facebook-square:hover,
+      .fa-twitter-square:hover,
+      .fa-instagram:hover,
+      .fa-google-plus-square:hover {
+        color: #45e19f;
+      }
 
-.social-media {
-  width: 100%;
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 2rem 0;
-  margin-top: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 1);
-}
-.social-media i {
-  font-size: 3rem;
-  transition: color 0.5s;
-}
-.fa-facebook-square {
-  color: #3b5999;
-}
-.fa-twitter-square {
-  color: #55acee;
-}
-.fa-instagram {
-  color: #e6683c;
-}
-.fa-google-plus-square {
-  color: #dd4b39;
-}
-.fa-facebook-square:hover,
-.fa-twitter-square:hover,
-.fa-instagram:hover,
-.fa-google-plus-square:hover {
-  color: #45e19f;
-}
-
-@media screen and (min-width: 700px) {
-  .card-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .card {
-    margin: 2rem;
-    transition: transform 0.5s;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  .card:nth-child(1) {
-    animation: fadeIn 0.5s 0.5s backwards;
-  }
-  .card:nth-child(2) {
-    animation: fadeIn 0.5s 1s backwards;
-  }
-  .card:nth-child(3) {
-    animation: fadeIn 0.5s 1.5s backwards;
-  }
-  .card:hover {
-    transform: scale(1.05);
-  }
-}
-        </style>
-</head>
-<body>
+      @media screen and (min-width: 700px) {
+        .card-wrapper {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
+        .card {
+          margin: 2rem;
+          transition: transform 0.5s;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        .card:nth-child(1) {
+          animation: fadeIn 0.5s 0.5s backwards;
+        }
+        .card:nth-child(2) {
+          animation: fadeIn 0.5s 1s backwards;
+        }
+        .card:nth-child(3) {
+          animation: fadeIn 0.5s 1.5s backwards;
+        }
+        .card:hover {
+          transform: scale(1.05);
+        }
+      }
+    </style>
+  </head>
+  <body>
     <div class="container-fluid">
       <nav class="z-depth-0 nav-bg">
-          <div class="nav-wrapper container">
-        <a class="brand-logo" href="index.html">
-          <img
-            src="assets/image/logo.png"
-            alt="logo"
-            srcset="assets/image/logo.png"
-          />
-        </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-bars" style="font-size:36px"></i></a>
+        <div class="nav-wrapper container">
+          <a class="brand-logo" href="index.html">
+            <img
+              src="assets/image/logo.png"
+              alt="logo"
+              srcset="assets/image/logo.png"
+            />
+          </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="fa fa-bars" style="font-size:36px"></i
+          ></a>
           <ul class="right hide-on-med-and-down">
             <li class="logged-in" style="display:none;">
               <a class=" " href="calendar.html">Event This Month</a>
@@ -242,61 +243,46 @@ section {
             </li>
 
             <li class=" logged-out" style="display:none;">
-              <a
-                href="#"
-                class=" modal-trigger"
-                data-target="modal-login"
+              <a href="#" class=" modal-trigger" data-target="modal-login"
                 >Login</a
               >
             </li>
             <li class=" logged-out" style="display:none;">
-              <a
-                href="#"
-                class="modal-trigger"
-                data-target="modal-signup"
+              <a href="#" class="modal-trigger" data-target="modal-signup"
                 >Sign up</a
               >
             </li>
-
           </ul>
-
         </div>
       </nav>
       <ul class="sidenav" id="mobile-demo">
-          <li class="logged-in" style="display:none;">
-            <a class=" " href="calendar.html">Event This Month</a>
-          </li>
-          <li class="">
-            <a class=" " href="#">Contact</a>
-          </li>
-          <li class="">
-            <a class=" " href="#">Help</a>
-          </li>
+        <li class="logged-in" style="display:none;">
+          <a class=" " href="calendar.html">Event This Month</a>
+        </li>
+        <li class="">
+          <a class=" " href="#">Contact</a>
+        </li>
+        <li class="">
+          <a class=" " href="#">Help</a>
+        </li>
 
-          <li class=" logged-in" style="display:none;">
-            <a href="#" class="grey-text" id="logout"
-              ><span id="logged-user"></span>Logout</a
-            >
-          </li>
+        <li class=" logged-in" style="display:none;">
+          <a href="#" class="grey-text" id="logout"
+            ><span id="logged-user"></span>Logout</a
+          >
+        </li>
 
-          <li class=" logged-out" style="display:none;">
-            <a
-              href="#"
-              class="  modal-trigger"
-              data-target="modal-login"
-              >Login</a
-            >
-          </li>
-          <li class=" logged-out" style="display:none;">
-            <a
-              href="#"
-              class=" modal-trigger"
-              data-target="modal-signup"
-              >Sign up</a
-            >
-          </li>
-
-        </ul>
+        <li class=" logged-out" style="display:none;">
+          <a href="#" class="  modal-trigger" data-target="modal-login"
+            >Login</a
+          >
+        </li>
+        <li class=" logged-out" style="display:none;">
+          <a href="#" class=" modal-trigger" data-target="modal-signup"
+            >Sign up</a
+          >
+        </li>
+      </ul>
 
       <!-- SIGN UP MODAL -->
       <div id="modal-signup" class="modal">
@@ -339,103 +325,155 @@ section {
         </div>
       </div>
 
-
       <section>
-          <div class="container">
-              <h1 class="heading">Meet the Team</h1>
-              <div class="card-wrapper">
-                  <div class="card">
-                      <img src="assets/image/cardbg.jpg" alt="card background" class="card-img">
-                      <img src="assets/image/tej-photo.jpeg" alt="profile image" class="profile-img">
-                      <h1>Tej Subedi</h1>
-                      <p class="job-title">Lead Designer </p>
-                      <p class="about">As a Lead Designer I will play a leadership role in a creative
-                          team of designers and collaborate with clients to create inspiring projects and timeless.
-                      </p>
-                      <a href="#" class="btn">Contact</a>
-                      <ul class="social-media">
-                          <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                          <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                          <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                      </ul>
-                  </div>
-                  <div class="card">
-                      <img src="assets/image/cardbg.jpg" alt="card background" class="card-img">
-                      <img src="assets/image/raj-photo.jpg" alt="profile image" class="profile-img">
-                      <h1>Raj Shahu</h1>
-                      <p class="job-title">Frontend developer </p>
-                      <p class="about">A Front End Developer who can utilize HTML, CSS and jQuery
-                          to develop effective user interfaces on the company website and mobile apps.
-                      </p>
-                      <a href="#" class="btn">Contact</a>
-                      <ul class="social-media">
-                          <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                          <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                          <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                      </ul>
-                  </div>
-                  <div class="card">
-                      <img src="assets/image/cardbg.jpg" alt="card background" class="card-img">
-                      <img src="assets/image/ravi-photo.jpg" alt="profile image" class="profile-img">
-                      <h1>Ravi Joshi</h1>
-                      <p class="job-title">Back End Developer</p>
-                      <p class="about">As a Back End Developer I am always focused on building a better,
-                          more efficient program and creating a better end-user experience.
-                      </p>
-                      <a href="#" class="btn">Contact</a>
-                      <ul class="social-media">
-                          <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                          <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                          <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                      </ul>
-                  </div>
-              </div>
+        <div class="container">
+          <h1 class="heading">Meet the Team</h1>
+          <div class="card-wrapper">
+            <div class="card">
+              <img
+                src="assets/image/cardbg.jpg"
+                alt="card background"
+                class="card-img"
+              />
+              <img
+                src="assets/image/tej-photo.jpeg"
+                alt="profile image"
+                class="profile-img"
+              />
+              <h1>Tej Subedi</h1>
+              <p class="job-title">Lead Designer</p>
+              <p class="about">
+                As a Lead Designer I will play a leadership role in a creative
+                team of designers and collaborate with clients to create
+                inspiring projects and timeless.
+              </p>
+              <a href="#" class="btn">Contact</a>
+              <ul class="social-media">
+                <li>
+                  <a href="#"><i class="fa fa-facebook-square"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter-square"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <img
+                src="assets/image/cardbg.jpg"
+                alt="card background"
+                class="card-img"
+              />
+              <img
+                src="assets/image/raj-photo.jpg"
+                alt="profile image"
+                class="profile-img"
+              />
+              <h1>Raj Shahu</h1>
+              <p class="job-title">Frontend developer</p>
+              <p class="about">
+                A Front End Developer who can utilize HTML, CSS and jQuery to
+                develop effective user interfaces on the company website and
+                mobile apps.
+              </p>
+              <a href="#" class="btn">Contact</a>
+              <ul class="social-media">
+                <li>
+                  <a href="#"><i class="fa fa-facebook-square"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter-square"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <img
+                src="assets/image/cardbg.jpg"
+                alt="card background"
+                class="card-img"
+              />
+              <img
+                src="assets/image/ravi-photo.jpg"
+                alt="profile image"
+                class="profile-img"
+              />
+              <h1>Ravi Joshi</h1>
+              <p class="job-title">Back End Developer</p>
+              <p class="about">
+                As a Back End Developer I am always focused on building a
+                better, more efficient program and creating a better end-user
+                experience.
+              </p>
+              <a href="#" class="btn">Contact</a>
+              <ul class="social-media">
+                <li>
+                  <a href="#"><i class="fa fa-facebook-square"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter-square"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
       </section>
 
-       <div class="p-5">&nbsp;</div>
-       <footer class="footer fixed-bottom py-4 text-white">
-         <div class="container text-center">
-           <small
-             >&copy;
-             <script type="text/javascript">
-               document.write(new Date().getFullYear());
-             </script>
-             UofT SCS Coding Bootcamp (BootCampCoder)</small
-           >
-         </div>
-       </footer>
-     </div>
-     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
-     <script></script>
+      <div class="p-5">&nbsp;</div>
+      <footer class="footer fixed-bottom py-4 text-white">
+        <div class="container text-center">
+          <small
+            >&copy;
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            UofT SCS Coding Bootcamp (BootCampCoder)</small
+          >
+        </div>
+      </footer>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+    <script></script>
 
-     <script src="assets/javascript/app.js"></script>
-     <!-- <script src="assets/javascript/categories.js"></script>
+    <script src="assets/javascript/app.js"></script>
+    <!-- <script src="assets/javascript/categories.js"></script>
      <script src="assets/javascript/subcategories.js"></script> -->
-     <script src="assets/javascript/auth.js"></script>
-     <script src="assets/javascript/test.js"></script>
-     <script src="assets/javascript/search.js"></script>
-     <script src="assets/javascript/mapapi.js"></script>
-     <script src="assets/javascript/getLocation.js"></script>
-     <script src="assets/javascript/eventbrite.js"></script>
- <!-- Compiled and minified JavaScript -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-     <script
-       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-       crossorigin="anonymous"
-     ></script>
+    <script src="assets/javascript/auth.js"></script>
+    <script src="assets/javascript/index.js"></script>
+    <script src="assets/javascript/search.js"></script>
+    <script src="assets/javascript/mapapi.js"></script>
+    <script src="assets/javascript/getLocation.js"></script>
+    <script src="assets/javascript/eventbrite.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
 
-
-     <script
-       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-       crossorigin="anonymous"
-     ></script>
-   </body>
- </html>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

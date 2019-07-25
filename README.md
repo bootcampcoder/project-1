@@ -1,21 +1,25 @@
 # project-1
 
-# Create a Repository
+![slide 1](presentation-eventHunter/Slide1.png)
+![slide 2](presentation-eventHunter/Slide2.png)
+![slide 3](presentation-eventHunter/Slide3.png)
+![slide 4](presentation-eventHunter/Slide4.png)
+![slide 5](presentation-eventHunter/Slide5.png)
+![slide 6](presentation-eventHunter/Slide6.png)
+![slide 7](presentation-eventHunter/Slide7.png)
+![slide 8](presentation-eventHunter/Slide8.png)
+![slide 9](presentation-eventHunter/Slide9.png)
+![slide 10](presentation-eventHunter/Slide10.png)
+![slide 11](presentation-eventHunter/Slide11.png)
+![slide 12](presentation-eventHunter/Slide12.png)
 
-In this activity we will create a Github repository and add group members as collaborators.
+## Deployment
 
-## Instructions
+* This game is deployed to Github:
+https://bootcampcoder.github.io/project-1/
 
-* One group member should create a new Github repository. Don't worry about the project name now, this can be changed later.
+### Author
 
-* From the repo's main page, click the "Settings" tab.
-
-* Once in the repo's settings, select the "Collaborators" menu item on the left.
-
-* From the "Collaborators" page invite your group members to be project collaborators by entering their Github usernames one at a time.
-
-* Each invited group member should receive an email they must open to accept the invitation.
-
-### Hints
-
-* Ask an instructor or TA if you get stuck!
+* [Raj Kumar Shahu](https://rajkumarshahu.github.io/Responsive-Portfolio/)
+* [Tej Prasad Subedi](https://tejsubedi.github.io/Responsive-Portfolio/)
+* [Ravi Piyush Joshi](https://ravipjoshi.github.io/Responsive-Portfolio/)
