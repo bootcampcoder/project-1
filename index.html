@@ -37,15 +37,17 @@
   <body>
     <div class="container-fluid">
       <nav class="z-depth-0 nav-bg">
-          <div class="nav-wrapper container">
-        <a class="brand-logo" href="index.html">
-          <img
-            src="assets/image/logo.png"
-            alt="logo"
-            srcset="assets/image/logo.png"
-          />
-        </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa fa-bars" style="font-size:36px"></i></a>
+        <div class="nav-wrapper container">
+          <a class="brand-logo" href="index.html">
+            <img
+              src="assets/image/logo.png"
+              alt="logo"
+              srcset="assets/image/logo.png"
+            />
+          </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="fa fa-bars" style="font-size:36px"></i
+          ></a>
           <ul class="right hide-on-med-and-down">
             <li class="logged-in" style="display:none;">
               <a class=" " href="calendar.html">Event This Month</a>
@@ -64,61 +66,46 @@
             </li>
 
             <li class=" logged-out" style="display:none;">
-              <a
-                href="#"
-                class=" modal-trigger"
-                data-target="modal-login"
+              <a href="#" class=" modal-trigger" data-target="modal-login"
                 >Login</a
               >
             </li>
             <li class=" logged-out" style="display:none;">
-              <a
-                href="#"
-                class="modal-trigger"
-                data-target="modal-signup"
+              <a href="#" class="modal-trigger" data-target="modal-signup"
                 >Sign up</a
               >
             </li>
-
           </ul>
-
         </div>
       </nav>
       <ul class="sidenav" id="mobile-demo">
-          <li class="logged-in" style="display:none;">
-            <a class=" " href="calendar.html">Event This Month</a>
-          </li>
-          <li class="">
-            <a class=" " href="contact.html">Contact</a>
-          </li>
-          <li class="">
-            <a class=" " href="#">Help</a>
-          </li>
+        <li class="logged-in" style="display:none;">
+          <a class=" " href="calendar.html">Event This Month</a>
+        </li>
+        <li class="">
+          <a class=" " href="contact.html">Contact</a>
+        </li>
+        <li class="">
+          <a class=" " href="help.html">Help</a>
+        </li>
 
-          <li class=" logged-in" style="display:none;">
-            <a href="#" class="grey-text" id="logout"
-              ><span id="logged-user"></span>Logout</a
-            >
-          </li>
+        <li class=" logged-in" style="display:none;">
+          <a href="#" class="grey-text" id="logout"
+            ><span id="logged-user"></span>Logout</a
+          >
+        </li>
 
-          <li class=" logged-out" style="display:none;">
-            <a
-              href="#"
-              class="  modal-trigger"
-              data-target="modal-login"
-              >Login</a
-            >
-          </li>
-          <li class=" logged-out" style="display:none;">
-            <a
-              href="#"
-              class=" modal-trigger"
-              data-target="modal-signup"
-              >Sign up</a
-            >
-          </li>
-
-        </ul>
+        <li class=" logged-out" style="display:none;">
+          <a href="#" class="  modal-trigger" data-target="modal-login"
+            >Login</a
+          >
+        </li>
+        <li class=" logged-out" style="display:none;">
+          <a href="#" class=" modal-trigger" data-target="modal-signup"
+            >Sign up</a
+          >
+        </li>
+      </ul>
 
       <!-- SIGN UP MODAL -->
       <div id="modal-signup" class="modal">
@@ -169,22 +156,23 @@
               <p class="logged-out-message h3">
                 You are currently logged out. Please log in to use this
                 application.
-              </p><br>
+              </p>
+              <br />
               <button
-                          id="home-content"
-                          type="submit"
-
-                          class="search-btn waves-effect waves-light btn-large"
-                        >
-                          <i class="fa fa-search"></i>
-                        Search Free Events</button>
+                id="home-content"
+                type="submit"
+                class="search-btn waves-effect waves-light btn-large"
+              >
+                <i class="fa fa-search"></i>
+                Search Free Events
+              </button>
             </div>
             <div id="" style="display:none;" class="row align-center">
               <!-- <form>
                 <div class="p-1 search-form mb-4">
                   <div class="input-group row">
                     <div class="input-field col s12"> -->
-                      <!-- <input
+              <!-- <input
                         type="text"
 
                         class="form-control search-input"
@@ -193,10 +181,7 @@
                     </div>
                     <div class="input-group-append"> -->
 
-
-
-
-                    <!-- </div>
+              <!-- </div>
                   </div>
                 </div>
               </form> -->
@@ -210,112 +195,102 @@
                 >
                   <i class="fa fa-angle-double-down"></i>
                 </button> -->
-              </div>
             </div>
+          </div>
 
-            <div class="clearfix"></div>
-            <div class="modal fade" id="filterModal">
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content p-4">
-                  <div>
-                      <form>
-                          <div class="p-1 search-form mb-4">
-                            <div class="input-group row">
-                              <div class="input-field col s12">
-                                <input
-                                  type="text"
-
-                                  class="form-control"
-                                />
-                                <label for="search">Search</label>
-                              </div>
-                              <div class="input-group-append">
-                                <button
-                                  id="button-addon"
-                                  type="submit"
-
-                                  class="waves-effect waves-light btn-small"
-                                >
-                                  <i class="fa fa-search"></i>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                  </div>
-                  <!-- Modal Header -->
-                  <div class="modal-header ">
-                    <h4 class="modal-title mb-4">Advanced Search</h4>
-                    <div class="close">
-                      <button
-                        type="button"
-                        class="close-btn"
-                        data-dismiss="modal"
-                      >
-                        Close <i class="fa fa-close" style="font-size:24px"></i>
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Modal body -->
-                  <div class="modal-body">
-                    <form>
-                      <div class="row">
-                        <div class="form-group col-lg-6 col-sm-6">
-                          <label for="category">Category:</label>
-                          <select
-                            class="form-control"
-                            id="sel-category"
-                            name="category"
-                          >
-                            <option selected>Select one</option>
-                          </select>
+          <div class="clearfix"></div>
+          <div class="modal fade" id="filterModal">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content p-4">
+                <div>
+                  <form>
+                    <div class="p-1 search-form mb-4">
+                      <div class="input-group row">
+                        <div class="input-field col s12">
+                          <input type="text" class="form-control" />
+                          <label for="search">Search</label>
                         </div>
-
-                        <div class="form-group col-lg-6 col-sm-6">
-                          <label for="subcategory">Subcategory:</label>
-                          <select
-                            class="form-control"
-                            id="sel-sub-category"
-                            name="subcategory"
-                          >
-                            <option selected>Select one</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!-- Modal footer -->
-                      <div class="modal-footer">
-                        <div class="reset">
-                          <button type="button" class="btn reset-btn">
-                            Reset <i class="fa fa-refresh"></i>
-                          </button>
-                        </div>
-                        <div class="search">
+                        <div class="input-group-append">
                           <button
+                            id="button-addon"
                             type="submit"
-
-                            class="btn search-btn"
+                            class="waves-effect waves-light btn-small"
                           >
-                            Search <i class="fa fa-search"></i>
+                            <i class="fa fa-search"></i>
                           </button>
                         </div>
                       </div>
-                    </form>
+                    </div>
+                  </form>
+                </div>
+                <!-- Modal Header -->
+                <div class="modal-header ">
+                  <h4 class="modal-title mb-4">Advanced Search</h4>
+                  <div class="close">
+                    <button
+                      type="button"
+                      class="close-btn"
+                      data-dismiss="modal"
+                    >
+                      Close <i class="fa fa-close" style="font-size:24px"></i>
+                    </button>
                   </div>
+                </div>
 
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <form>
+                    <div class="row">
+                      <div class="form-group col-lg-6 col-sm-6">
+                        <label for="category">Category:</label>
+                        <select
+                          class="form-control"
+                          id="sel-category"
+                          name="category"
+                        >
+                          <option selected>Select one</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-lg-6 col-sm-6">
+                        <label for="subcategory">Subcategory:</label>
+                        <select
+                          class="form-control"
+                          id="sel-sub-category"
+                          name="subcategory"
+                        >
+                          <option selected>Select one</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <div class="reset">
+                        <button type="button" class="btn reset-btn">
+                          Reset <i class="fa fa-refresh"></i>
+                        </button>
+                      </div>
+                      <div class="search">
+                        <button type="submit" class="btn search-btn">
+                          Search <i class="fa fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- </div> -->
 
-
-       <div class=" container">
-            <div class="text-center col s12 h3"><p>Top 4 things to do in Toronto</p></div>
+        <div class=" container">
+          <div class="text-center col s12 h3">
+            <p>Top 4 things to do in Toronto</p>
           </div>
+        </div>
 
-       <div id="events-4"class="row mx-auto container things-to-do"></div>
-
+        <div id="events-4" class="row mx-auto container things-to-do"></div>
       </div>
 
       <div class="p-5">&nbsp;</div>
@@ -331,6 +306,7 @@
         </div>
       </footer>
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
@@ -344,8 +320,8 @@
     <script src="assets/javascript/mapapi.js"></script>
     <script src="assets/javascript/getLocation.js"></script>
     <script src="assets/javascript/eventbrite.js"></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -353,10 +329,10 @@
     ></script>
 
     <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwWTWiIHOwxao1V9TG8GMQlqj1utG598Y&libraries=places&callback=initMap"
-    async
-    defer
-  ></script>
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwWTWiIHOwxao1V9TG8GMQlqj1utG598Y&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
