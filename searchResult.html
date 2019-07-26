@@ -109,6 +109,14 @@
           >
         </li>
       </ul>
+
+      <div class="jumbotron display-4 text-center logged-out-message" style="display:none;">
+        Event Search<br />
+        <p class=" h3">
+          You are currently logged out. Please log in to use this
+          application.
+        </p>
+      </div>
       <hr />
       <div class="m-4 container mx-auto">
         <form>
@@ -145,8 +153,48 @@
       </div>
 
       <hr />
+      <!-- SIGN UP MODAL -->
+    <div id="modal-signup" class="modal">
+      <div class="modal-content">
+        <h4>Sign up</h4>
+        <br />
+        <form id="signup-form">
+          <div class="input-field">
+            <input type="email" id="signup-email" required />
+            <label for="signup-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="signup-password" required />
+            <label for="signup-password">Choose password</label>
+          </div>
 
-      <div class="row mb-5">
+          <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+          <p class="error-signup pink-text center-align"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal">
+      <div class="modal-content">
+        <h4>Login</h4>
+        <br />
+        <form id="login-form">
+          <div class="input-field">
+            <input type="email" id="login-email" required />
+            <label for="login-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="login-password" required />
+            <label for="login-password">Your password</label>
+          </div>
+          <button class="btn yellow darken-2 z-depth-0">Login</button>
+          <p class="error pink-text center-align"></p>
+        </form>
+      </div>
+    </div>
+
+      <div class="row mb-5 map-container">
         <div class="col-lg-12 ">
           <div class="mt-2 mx-auto shadow search-container">
             <div class="modal fade" id="filterModal">

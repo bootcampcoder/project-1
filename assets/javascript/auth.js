@@ -27,12 +27,16 @@ auth.onAuthStateChanged(user => {
     loggedOutLinks.hide();
     loggedInLinks.show();
     $(".calendar-container").show();
+    $(".search-form").show();
+    $(".map-container").show();
   } else {
     $("#home-content").hide();
     $(".logged-out-message").show();
     loggedOutLinks.show();
     loggedInLinks.hide();
     $(".calendar-container").hide();
+    $(".search-form").hide();
+    $(".map-container").hide();
   }
 });
 

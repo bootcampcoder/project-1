@@ -34,23 +34,25 @@ function ajaxCall() {
     });
 
     for (var i = 0; i < 25; i++) {
-      $(".collapsible-search").append(`<li>
-      <div class="collapsible-header">${eventObj[i].name.text}</div>
-      <div class="collapsible-body">
-        <span>Starts on: ${moment(eventObj[i].start.local).format(
-          "YYYY-MM-DD HH:mm:ss"
-        )}</span><br />
-        <span>Ends on: ${moment(eventObj[i].end.local).format(
-          "YYYY-MM-DD HH:mm:ss"
-        )}</span><br />
-        <span
-          ><a href="${eventObj[i].url}"><img
-          src=""
-          alt=""
-          width="70%"
-      /></a></span>
-      </div>
-    </li>`);
+
+        $(".collapsible-search").append(`<li>
+        <div class="collapsible-header">${eventObj[i].name.text}</div>
+        <div class="collapsible-body">
+          <span>Starts on: ${moment(eventObj[i].start.local).format(
+            "YYYY-MM-DD HH:mm:ss"
+          )}</span><br />
+          <span>Ends on: ${moment(eventObj[i].end.local).format(
+            "YYYY-MM-DD HH:mm:ss"
+          )}</span><br />
+          <span
+            ><a href="${eventObj[i].url}"><img
+            src=""
+            alt=""
+            width="70%"
+        /></a></span>
+        </div>
+      </li>`);
+
     }
     eqfeed_callback();
   });
@@ -83,4 +85,7 @@ function eqfeed_callback() {
     );
   }
 }
-$(document).on("click", ".search-btn", ajaxCall);
+$(".search-btn").on("click", (e)=>{
+  e.preventDefault();
+  window.location.href='/searchResult.html';
+});

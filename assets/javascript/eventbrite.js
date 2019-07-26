@@ -56,7 +56,7 @@ function getSubcategories(result) {
     var id = data2.subcategories;
     data2.subcategories.forEach(element => {
       if (result.categories[0].id == element.parent_category.id) {
-        console.log(id.id);
+
       }
     });
   });

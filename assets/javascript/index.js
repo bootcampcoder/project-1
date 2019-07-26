@@ -62,10 +62,8 @@ function initEvents() {
     for (var i = 0; i < 4; i++) {
       var desc = data.events[i].description.text;
       desc = desc.substring(0, 35);
-      console.log(desc);
       var title = data.events[i].name.text;
       title = title.substring(0, 7);
-      console.log(title);
 
       $("#events-4").append(`<div class="col s12 m7" id="Result${i}">
         <a  id="result${i}-link" href=${
