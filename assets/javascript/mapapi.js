@@ -87,5 +87,5 @@ function eqfeed_callback() {
 }
 $(".search-btn").on("click", (e)=>{
   e.preventDefault();
-  window.location.href='../../searchResult.html';
+  window.location.href='https://bootcampcoder.github.io/project-1/searchResult.html';
 });
