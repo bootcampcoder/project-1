@@ -15,11 +15,11 @@
 
 ## Deployment
 
-* This game is deployed to Github:
-https://bootcampcoder.github.io/project-1/
+- This game is deployed to Github:
+  https://bootcampcoder.github.io/project-1/
 
-### Author
+### Team Members
 
-* [Raj Kumar Shahu](https://rajkumarshahu.github.io/Responsive-Portfolio/)
-* [Tej Prasad Subedi](https://tejsubedi.github.io/Responsive-Portfolio/)
-* [Ravi Piyush Joshi](https://ravipjoshi.github.io/Responsive-Portfolio/)
+- [Raj Kumar Shahu](https://rajkumarshahu.github.io/Responsive-Portfolio/)
+- [Tej Prasad Subedi](https://tejsubedi.github.io/Responsive-Portfolio/)
+- [Ravi Piyush Joshi](https://ravipjoshi.github.io/Responsive-Portfolio/)
