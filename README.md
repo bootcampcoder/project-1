@@ -1,5 +1,9 @@
 # project-1
 
+
+Going to update few features showing data into the map and updating events through the lists.
+
+
 ![slide 1](presentation-eventHunter/Slide1.png)
 ![slide 2](presentation-eventHunter/Slide2.png)
 ![slide 3](presentation-eventHunter/Slide3.png)
